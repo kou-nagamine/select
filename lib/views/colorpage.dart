@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:select/components/button.dart';
 import '../models/pants.dart';
 import 'shapepage.dart';
 
@@ -15,15 +16,7 @@ class ColorPage extends StatelessWidget{
       ),
       body: Column(
         children: [
-          ElevatedButton(
-            onPressed: (){
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder:(context) => ShapePage(pantsinfo: PantsInfo(color:color ),)),
-              );
-            },
-            child: Text(""),
-          ),
+          Button(pantsinfo: PantsInfo(color: color), transitionpage: ShapePage(pantsinfo: PantsInfo(color: color)))
         ],
       ),
     );

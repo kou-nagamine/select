@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import '../models/pants.dart';
 import 'result.dart';
+import '../components/button.dart';
 
 class ShapePage extends StatelessWidget{
   final PantsInfo pantsinfo;
 
-  ShapePage({required this.pantsinfo});
+ ShapePage({required this.pantsinfo});
 
   @override
   Widget build (BuildContext context){
@@ -16,15 +17,7 @@ class ShapePage extends StatelessWidget{
       ),
       body: Column(
         children: <Widget>[
-          ElevatedButton(
-            onPressed: (){
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder:(context) => Result(pantsinfo: fullpantsinfo))
-              );
-            }, child:Text('insert shape'),
-          )
+          Button(pantsinfo: fullpantsinfo, transitionpage: Result(pantsinfo: fullpantsinfo)),
         ]
       ),
     );
