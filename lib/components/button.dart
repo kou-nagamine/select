@@ -10,12 +10,13 @@ class Button extends StatelessWidget{
   @override
 
   Widget build(BuildContext context) {
-    return Container(
+    return Center(
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10),
           ),
+          minimumSize: Size(100, 30),
           backgroundColor: pantsinfo.color ?? Colors.white
         ),
         onPressed: () {

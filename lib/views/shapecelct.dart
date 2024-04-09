@@ -10,14 +10,20 @@ class ShapePage extends StatelessWidget{
 
   @override
   Widget build (BuildContext context){
-    var fullpantsinfo = PantsInfo(color:pantsinfo.color, shape:"スキニー");
+    var fullpantsinfos =  [
+      PantsInfo(color:pantsinfo.color, shape:"スキニー"),
+      PantsInfo(color:pantsinfo.color, shape:"ジーンズ"),
+      PantsInfo(color:pantsinfo.color, shape:"ジャージ"),
+    ];
     return Scaffold(
       appBar: AppBar(
         title: Text('Shape Page'),
       ),
       body: Column(
         children: <Widget>[
-          Button(pantsinfo: fullpantsinfo, transitionpage: Result(pantsinfo: fullpantsinfo)),
+          ...fullpantsinfos.map((fullpantsinfos) => 
+          Button(pantsinfo: PantsInfo(shape:fullpantsinfos.shape), transitionpage: Result(pantsinfo: fullpantsinfos)
+          )),
         ]
       ),
     );

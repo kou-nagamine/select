@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'colorpage.dart';
+import 'colorselect.dart';
 
 class StartPage extends StatelessWidget{
 

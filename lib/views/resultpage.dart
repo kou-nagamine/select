@@ -19,7 +19,7 @@ class Resultpage extends StatelessWidget {
         children: <Widget>[
           Container(
             child: SvgPicture.asset(
-              'assets/images/heart.svg',
+              'assets/images/jeans.svg',
             )
           )
         ]
