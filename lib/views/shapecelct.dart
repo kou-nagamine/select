@@ -11,9 +11,9 @@ class ShapePage extends StatelessWidget{
   @override
   Widget build (BuildContext context){
     var fullpantsinfos =  [
-      PantsInfo(color:pantsinfo.color, shape:"スキニー"),
-      PantsInfo(color:pantsinfo.color, shape:"ジーンズ"),
-      PantsInfo(color:pantsinfo.color, shape:"ジャージ"),
+      PantsInfo(color:pantsinfo.color, shape:"jeans"),
+      PantsInfo(color:pantsinfo.color, shape:"sweat"),
+      PantsInfo(color:pantsinfo.color, shape:"skinny"),
     ];
     return Scaffold(
       appBar: AppBar(
