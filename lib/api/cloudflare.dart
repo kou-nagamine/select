@@ -12,7 +12,7 @@ class CloudflareConnecter{
         Uri.parse(cloudeflareUrl),
         headers: {'Content-Type': 'application/json'},
         body:jsonEncode({
-          'color': pantsinfo.color,
+          'color': pantsinfo.color.toString(),
           'shape': pantsinfo.shape,
         })
       );

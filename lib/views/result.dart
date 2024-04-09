@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../models/pants.dart';
 import 'resultpage.dart';
+import '../api/cloudflare.dart';
 
 class Result extends StatelessWidget{
   final PantsInfo pantsinfo;
@@ -13,6 +14,7 @@ class Result extends StatelessWidget{
 
     return Center(
         child: ElevatedButton(onPressed: () {
+            CloudflareConnecter.insertData(pantsinfo);
             Navigator.push(
               context,
               MaterialPageRoute(
