@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import '../models/pants.dart';
 
 class Button extends StatelessWidget{
-  final PantsInfo pantsinfo;
+  final PantsInfo? pantsinfo;
   final Widget transitionpage;
 
-  Button({required this.pantsinfo, required this.transitionpage});
+  Button({this.pantsinfo, required this.transitionpage});
 
   @override
 
@@ -16,8 +16,8 @@ class Button extends StatelessWidget{
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10),
           ),
-          minimumSize: Size(100, 30),
-          backgroundColor: pantsinfo.color ?? Colors.white
+          minimumSize: Size(300, 100),
+          backgroundColor: pantsinfo?.color ?? Colors.white
         ),
         onPressed: () {
           Navigator.push(
@@ -25,9 +25,8 @@ class Button extends StatelessWidget{
             MaterialPageRoute(builder: (context) => transitionpage)
           );
         },
-        child: Text(pantsinfo.shape ?? ""),
+        child: Text(pantsinfo?.shape ?? ""),
       )
     );
   }
-
 }

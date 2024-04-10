@@ -17,15 +17,28 @@ class ShapePage extends StatelessWidget{
     ];
     return Scaffold(
       appBar: AppBar(
-        title: Text('Shape Page'),
+        title: Text(''),
       ),
-      body: Column(
-        children: <Widget>[
-          ...fullpantsinfos.map((fullpantsinfos) => 
-          Button(pantsinfo: PantsInfo(shape:fullpantsinfos.shape), transitionpage: Result(pantsinfo: fullpantsinfos)
-          )),
-        ]
-      ),
+      body:Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            const Padding( 
+              padding: EdgeInsets.only(top: 1.0, bottom: 100.0),
+              child: Text("普段はくズボンは？", style: TextStyle(fontSize: 30)),
+            ),
+            for( int i = 0; i < fullpantsinfos.length; i++ )...[
+              Button(
+                pantsinfo: PantsInfo(shape: fullpantsinfos[i].shape),
+                transitionpage: Result(pantsinfo: fullpantsinfos[i]),
+              ),
+              if (i < 2)
+              SizedBox(height: 7),
+              SizedBox(height: 60)
+            ],
+          ]
+        ),
+      )
     );
   }
 }
