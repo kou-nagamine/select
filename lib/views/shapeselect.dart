@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:select/components/button.dart';
 import '../models/pants.dart';
-import 'shapecelct.dart';
+import 'colorsselect.dart';
 
-class ColorPage extends StatelessWidget{
-  ColorPage({super.key});
+class ShapePage extends StatelessWidget{
+  ShapePage({super.key});
 
-  var colors = [
-    Colors.black,
-    const Color.fromARGB(255, 55, 25, 25),
-    Colors.grey,
+  var shapes = [
+    "ジーンズ",
+    "スウェット",
+    "スキニー"
   ]; 
   
   @override
@@ -23,12 +23,16 @@ class ColorPage extends StatelessWidget{
         children: <Widget>[
           const Padding( 
               padding: EdgeInsets.only(top: 1.0, bottom: 100.0),
-              child: Text("普段はくズボンは？", style: TextStyle(fontSize: 30)),
-          ),
-          for (int i = 0; i < colors.length; i++)...[
+              child: Text(
+                "普段履くズボンは？", 
+                style: TextStyle(fontSize: 30),
+                textAlign: TextAlign.center, 
+                ),
+              ),
+          for (int i = 0; i < shapes.length; i++)...[
             Button(
-              pantsinfo: PantsInfo(color: colors[i]), 
-              transitionpage: ShapePage(pantsinfo: PantsInfo(color: colors[i]))
+              pantsinfo: PantsInfo(shape: shapes[i]), 
+              transitionpage: ColorPage(pantsinfo: PantsInfo(shape:shapes[i]),)
             ),
             if (i < 2)
             SizedBox(height: 7),

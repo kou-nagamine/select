@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 import '../models/pants.dart';
-import 'result.dart';
 import '../components/button.dart';
+import 'questions.dart';
 
-class ShapePage extends StatelessWidget{
+class ColorPage extends StatelessWidget{
   final PantsInfo pantsinfo;
 
- ShapePage({required this.pantsinfo});
+ ColorPage({super.key, required this.pantsinfo});
 
   @override
   Widget build (BuildContext context){
     var fullpantsinfos =  [
-      PantsInfo(color:pantsinfo.color, shape:"jeans"),
-      PantsInfo(color:pantsinfo.color, shape:"sweat"),
-      PantsInfo(color:pantsinfo.color, shape:"skinny"),
+      PantsInfo(color:Color.fromARGB(255, 22, 76, 120), shape:pantsinfo.shape),
+      PantsInfo(color:Color.fromARGB(255, 32, 36, 39), shape:pantsinfo.shape),
+      PantsInfo(color:Color.fromARGB(255, 47, 27, 27), shape:pantsinfo.shape),
     ];
     return Scaffold(
       appBar: AppBar(
@@ -25,12 +25,15 @@ class ShapePage extends StatelessWidget{
           children: <Widget>[
             const Padding( 
               padding: EdgeInsets.only(top: 1.0, bottom: 100.0),
-              child: Text("普段はくズボンは？", style: TextStyle(fontSize: 30)),
+              child: Text(
+                "そのズボンの色は？", 
+                style: TextStyle(fontSize: 30),
+                textAlign: TextAlign.center),
             ),
             for( int i = 0; i < fullpantsinfos.length; i++ )...[
               Button(
-                pantsinfo: PantsInfo(shape: fullpantsinfos[i].shape),
-                transitionpage: Result(pantsinfo: fullpantsinfos[i]),
+                pantsinfo: PantsInfo(color: fullpantsinfos[i].color),
+                transitionpage: SixQuestion(pantsinfo: fullpantsinfos[i]),
               ),
               if (i < 2)
               SizedBox(height: 7),

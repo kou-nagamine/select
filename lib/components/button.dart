@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import '../models/pants.dart';
 
 class Button extends StatelessWidget{
@@ -17,7 +18,7 @@ class Button extends StatelessWidget{
             borderRadius: BorderRadius.circular(10),
           ),
           minimumSize: Size(300, 100),
-          backgroundColor: pantsinfo?.color ?? Colors.white
+          backgroundColor: pantsinfo?.color ?? Colors.grey
         ),
         onPressed: () {
           Navigator.push(
@@ -25,7 +26,13 @@ class Button extends StatelessWidget{
             MaterialPageRoute(builder: (context) => transitionpage)
           );
         },
-        child: Text(pantsinfo?.shape ?? ""),
+        child: Text(
+          pantsinfo?.shape ?? "",
+          style:const TextStyle(
+            fontSize: 20,
+            color: Colors.black
+            )
+        ),
       )
     );
   }

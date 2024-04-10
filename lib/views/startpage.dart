@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'colorselect.dart';
 import 'questions.dart';
 
 class StartPage extends StatelessWidget{

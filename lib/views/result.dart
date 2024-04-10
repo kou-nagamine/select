@@ -12,16 +12,30 @@ class Result extends StatelessWidget{
   Widget build(BuildContext context) {
     var resultinfo = pantsinfo;
 
-    return Center(
-        child: ElevatedButton(onPressed: () {
-            CloudflareConnecter.insertData(pantsinfo);
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder:(context) => Resultpage(pantsinfo: resultinfo))
-            );
-          }, child: Text('go result'),
-        ),
+    return Scaffold(
+      body:Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text("結果を見る",style: TextStyle(fontSize: 40),),
+            SizedBox(height: 100),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                minimumSize: Size(250,100)
+              ),
+              onPressed: () {
+                CloudflareConnecter.insertData(pantsinfo);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder:(context) => Resultpage(pantsinfo: resultinfo))
+                );
+              }, child: Text('Result',style: TextStyle(fontSize:25)),
+            ),
+            SizedBox(height:20)
+          ],
+        )
+      )
     );
   }
 }

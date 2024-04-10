@@ -13,21 +13,30 @@ class Resultpage extends StatelessWidget {
     Widget pnatsimage;
 
     switch (pantsinfo.shape){
-      case "skinny":
+      case "スキニー":
         pnatsimage = SvgPicture.asset(
             'assets/images/skinny.svg',
+            width: 400, 
+            height: 400,
+            fit: BoxFit.contain,
             colorFilter: ColorFilter.mode(pantsinfo.color ?? Colors.black, BlendMode.srcIn),
         );
         break;
-      case "jeans":
+      case "ジーンズ":
         pnatsimage = SvgPicture.asset(
             'assets/images/jeans.svg',
+            width: 400, 
+            height: 400,
+            fit: BoxFit.contain,
             colorFilter: ColorFilter.mode(pantsinfo.color ?? Colors.black, BlendMode.srcIn),
         );
         break;
-      case "sweat":
+      case "スウェット":
         pnatsimage = SvgPicture.asset(
             'assets/images/sweat.svg',
+            width: 400, 
+            height: 400,
+            fit: BoxFit.contain,
             colorFilter: ColorFilter.mode(pantsinfo.color ?? Colors.black, BlendMode.srcIn)
         );
         break;
@@ -36,11 +45,18 @@ class Resultpage extends StatelessWidget {
     }
     return Scaffold(
       appBar: AppBar(
-        title: Text(pantsinfo.shape ?? ""),
-        backgroundColor: pantsinfo.color,
+        title: Text(""),
       ),
       body: Center(
-        child: pnatsimage,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text("あなたが普段履いている長ズボンは",style: TextStyle(fontSize: 20),),
+            SizedBox(height: 100),
+            pnatsimage,
+            Text("おしゃれですね！",style: TextStyle(fontSize: 30),)
+          ],
+        ) 
       ),
     );
   }
