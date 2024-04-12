@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:select/views/resultpage.dart';
 import '../models/pants.dart';
 import '../views/result.dart';
 import '../components/page.dart';

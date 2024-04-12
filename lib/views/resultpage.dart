@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:select/views/startpage.dart';
 import '../models/pants.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -44,20 +45,46 @@ class Resultpage extends StatelessWidget {
         pnatsimage = Text("not fonud image");
     }
     return Scaffold(
-      appBar: AppBar(
-        title: Text(""),
-      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text("あなたが普段履いている長ズボンは",style: TextStyle(fontSize: 20),),
-            SizedBox(height: 100),
+            SizedBox(height: 40),
+            Text("普段履いているズボンは",style: TextStyle(fontSize: 30),),
+            SizedBox(height: 60),
             pnatsimage,
-            Text("おしゃれですね！",style: TextStyle(fontSize: 30),)
+            SizedBox(height: 10),
+            const Text("おしゃれですね ！！！",
+              style:TextStyle(
+                fontSize: 30,
+                color: Colors.red,
+              ),
+            ),
           ],
         ) 
       ),
+      bottomNavigationBar: BottomAppBar(
+        color:Colors.grey,
+        child: Row(
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            IconButton(
+                  icon: const Icon(
+                    Icons.home,
+                    color: Colors.white,
+                    size:40
+                  ),
+                  onPressed: () {
+                     Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => StartPage())
+                );
+                  },
+            )
+          ]
+        ),
+      )
     );
   }
 }
